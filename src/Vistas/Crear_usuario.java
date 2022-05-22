@@ -22,7 +22,7 @@ public class Crear_usuario extends javax.swing.JInternalFrame {
     
     public Crear_usuario() {
         initComponents();
-        String urlServidor = "http://127.0.0.1:8080/";
+        String urlServidor = "http://127.0.0.1:8080";
         this.miControlador = new controlador_usuario(urlServidor, "/usuarios");
     }
     public void Limpiar_campos_Usuario(){
@@ -217,16 +217,17 @@ public class Crear_usuario extends javax.swing.JInternalFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        try{
         String nombre = this.jTextField2.getText();
         String cedula = this.jTextField3.getText();
         String email = this.jTextField4.getText();
         int anoNacimiento = Integer.parseInt(this.jTextField5.getText());
         Usuario nuevo  = new Usuario(cedula,nombre,email,anoNacimiento);
-        miControlador.crear(nuevo);
-        JOptionPane.showMessageDialog(null,"El usuario ha sido creado con exito");
-        }catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "¡Ha ocurrido un error, inténtelo nuevamente! ->" + e);
+        nuevo = miControlador.crear(nuevo);
+        if(nuevo  != null){
+           this.jTextField1.setText(nuevo.getId());
+            JOptionPane.showMessageDialog(null,"El usuario ha sido creado con exito"); 
+        }else{
+            JOptionPane.showMessageDialog(null, "¡Ha ocurrido un error, inténtelo nuevamente!");
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 

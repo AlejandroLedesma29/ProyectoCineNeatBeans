@@ -22,7 +22,7 @@ public class informacion_pelicula extends javax.swing.JInternalFrame {
     controlador_pelicula miControladorPelicula;
     public informacion_pelicula() {
         initComponents();
-        String urlServidor = "http://127.0.0.1:8080/";
+        String urlServidor = "http://127.0.0.1:8080";
         this.miControladorPelicula = new controlador_pelicula(urlServidor, "/peliculas");
     }
 

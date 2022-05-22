@@ -21,7 +21,7 @@ public class Crear_pelicula extends javax.swing.JInternalFrame {
     
     public Crear_pelicula() {
         initComponents();
-        String urlServidor = "http://127.0.0.1:8080/";
+        String urlServidor = "http://127.0.0.1:8080";
         this.miControladorPelicula = new controlador_pelicula(urlServidor, "/peliculas");
     }
 
@@ -39,9 +39,9 @@ public class Crear_pelicula extends javax.swing.JInternalFrame {
         txtNombre = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtAno = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        txtTipo = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
@@ -74,21 +74,21 @@ public class Crear_pelicula extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Año:");
 
-        txtAno.setForeground(new java.awt.Color(204, 204, 204));
-        txtAno.setText("año de la pelicula");
-        txtAno.addActionListener(new java.awt.event.ActionListener() {
+        jTextField3.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField3.setText("año de la pelicula");
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAnoActionPerformed(evt);
+                jTextField3ActionPerformed(evt);
             }
         });
 
         jLabel4.setText("Tipo:");
 
-        txtTipo.setForeground(new java.awt.Color(204, 204, 204));
-        txtTipo.setText("tipo de pelicula");
-        txtTipo.addActionListener(new java.awt.event.ActionListener() {
+        jTextField4.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField4.setText("tipo de pelicula");
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTipoActionPerformed(evt);
+                jTextField4ActionPerformed(evt);
             }
         });
 
@@ -118,7 +118,7 @@ public class Crear_pelicula extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(133, 133, 133))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton3)
@@ -128,7 +128,7 @@ public class Crear_pelicula extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtAno, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(133, 133, 133))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -157,8 +157,8 @@ public class Crear_pelicula extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(57, 57, 57)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(60, 60, 60)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(104, 104, 104)
@@ -179,18 +179,18 @@ public class Crear_pelicula extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreActionPerformed
 
-    private void txtAnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAnoActionPerformed
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAnoActionPerformed
+    }//GEN-LAST:event_jTextField3ActionPerformed
 
-    private void txtTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoActionPerformed
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtTipoActionPerformed
+    }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        String tipo = this.txtTipo.getText();
+        String tipo = this.jTextField4.getText();
         String nombre = this.txtNombre.getText();
-        int ano = Integer.parseInt(this.txtAno.getText());
+        int ano = Integer.parseInt(this.jTextField3.getText());
         Pelicula nueva = new Pelicula(nombre, ano, tipo);
         nueva = this.miControladorPelicula.crear(nueva);
         if (nueva == null) {
@@ -215,9 +215,9 @@ public class Crear_pelicula extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField txtAno;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtTipo;
     // End of variables declaration//GEN-END:variables
 }
