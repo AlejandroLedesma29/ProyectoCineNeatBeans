@@ -11,6 +11,7 @@ import org.json.simple.JSONObject;
  * @author L E D E S M A
  */
 public class Boleto {
+    private String id;
     private double valor;
     private String tipo;
 
@@ -21,7 +22,7 @@ public class Boleto {
         this.valor = valor;
         this.tipo = tipo;
     }
-
+    
     /**
      * @return the valor
      */
@@ -56,5 +57,13 @@ public class Boleto {
         respuesta.put("tipo", this.getTipo());
         
         return respuesta;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

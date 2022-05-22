@@ -91,7 +91,7 @@
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtTipo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -185,6 +185,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

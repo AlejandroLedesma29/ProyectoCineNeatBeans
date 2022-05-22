@@ -20,8 +20,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String id, String cedula, String nombre, String email, int anoNacimiento) {
-        this.id = id;
+    public Usuario(String cedula, String nombre, String email, int anoNacimiento) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.email = email;
