@@ -285,6 +285,7 @@ public class informacion_pelicula extends javax.swing.JInternalFrame {
         String idpelicula=this.txtId.getText();
         this.miControladorPelicula.eliminar(idpelicula);
         JOptionPane.showMessageDialog(null, "Eliminación exitosa");
+        limpiarCampos();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
 
