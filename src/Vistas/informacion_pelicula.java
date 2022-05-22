@@ -249,7 +249,6 @@ public class informacion_pelicula extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
-<<<<<<< HEAD
     private void txtNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreMouseClicked
         // TODO add your handling code here:
         this.txtNombre.setText("");
@@ -264,7 +263,7 @@ public class informacion_pelicula extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         this.txtTipo.setText("");
     }//GEN-LAST:event_txtTipoMouseClicked
-=======
+
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         String id = this.txtId.getText();
         int año = Integer.parseInt(this.txtAno.getText());
@@ -281,7 +280,6 @@ public class informacion_pelicula extends javax.swing.JInternalFrame {
         this.txtAno.setText(""+actualizado.getAno());
         JOptionPane.showMessageDialog(null,"La pelicula ha sido actualizada");
     }//GEN-LAST:event_btnActualizarActionPerformed
->>>>>>> affd0e2e5acc683fc7727eb642a86989fa0f09c6
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         String idpelicula=this.txtId.getText();

@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.10.8
+Created-By: 17.0.1+12-LTS-39 (Oracle Corporation)
+Class-Path: lib/jdk-18.0.1.1/ lib/json-simple-1.1.jar lib/AbsoluteLayo
+ ut.jar
+X-COMMENT: Main-Class will be added automatically by build
+Main-Class: Vistas.Interfaz_principal
+
