@@ -196,7 +196,7 @@ public class Crear_pelicula extends javax.swing.JInternalFrame {
         if (nueva == null) {
             JOptionPane.showMessageDialog(null, "Problemas al crear el estudiante");
         } else {
-            JOptionPane.showMessageDialog(null, "Estudiante creado exitosamente con id " + nueva.getId());
+            JOptionPane.showMessageDialog(null, "Pelicula creado exitosamente con id " + nueva.getId());
             this.txtId.setText(nueva.getId());
         }
     }//GEN-LAST:event_jButton3ActionPerformed

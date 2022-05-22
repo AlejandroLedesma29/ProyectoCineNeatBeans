@@ -63,6 +63,7 @@ public class controlador_usuario {
             JSONObject usuarioJSON = (JSONObject) parser.parse(jsonString);
             nuevoUsuario=reArmar(usuarioJSON);
         } catch (Exception e) {
+            System.out.println("Error " + e);
             nuevoUsuario = null;
         }
         return nuevoUsuario;
@@ -74,7 +75,7 @@ public class controlador_usuario {
         nuevoUsuario.setNombre((String) objetoJson.get("nombre"));
         nuevoUsuario.setCedula((String) objetoJson.get("cedula"));
         nuevoUsuario.setEmail((String) objetoJson.get("email"));
-        nuevoUsuario.setAnoNacimiento((int) objetoJson.get("anoNacimiento"));
+        nuevoUsuario.setAnoNacimiento((int) (long) objetoJson.get("anoNacimiento"));
         return nuevoUsuario;
     }
 

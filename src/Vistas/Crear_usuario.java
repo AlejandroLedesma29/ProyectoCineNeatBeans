@@ -223,11 +223,11 @@ public class Crear_usuario extends javax.swing.JInternalFrame {
         int anoNacimiento = Integer.parseInt(this.jTextField5.getText());
         Usuario nuevo  = new Usuario(cedula,nombre,email,anoNacimiento);
         nuevo = miControlador.crear(nuevo);
-        if(nuevo  != null){
-           this.jTextField1.setText(nuevo.getId());
-            JOptionPane.showMessageDialog(null,"El usuario ha sido creado con exito"); 
-        }else{
+        if(nuevo  ==  null){
             JOptionPane.showMessageDialog(null, "¡Ha ocurrido un error, inténtelo nuevamente!");
+        }else{
+            this.jTextField1.setText(nuevo.getId());
+            JOptionPane.showMessageDialog(null,"El usuario ha sido creado con exito con id "+ nuevo.getId()); 
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
