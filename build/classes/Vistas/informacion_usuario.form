@@ -149,6 +149,7 @@
         <Property name="text" type="java.lang.String" value="c&#xe9;dula del usuario"/>
       </Properties>
       <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtCedulaBuscarUsuarioMouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCedulaBuscarUsuarioActionPerformed"/>
       </Events>
     </Component>
@@ -176,6 +177,7 @@
         <Property name="text" type="java.lang.String" value="nombre del usuario"/>
       </Properties>
       <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtNombreUsuarioMouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreUsuarioActionPerformed"/>
       </Events>
     </Component>
@@ -192,6 +194,7 @@
         <Property name="text" type="java.lang.String" value="e-mail del usuario"/>
       </Properties>
       <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtEmailUsuarioMouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmailUsuarioActionPerformed"/>
       </Events>
     </Component>

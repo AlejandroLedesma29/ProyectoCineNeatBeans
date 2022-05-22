@@ -63,6 +63,7 @@ public class controlador_usuario {
             JSONObject usuarioJSON = (JSONObject) parser.parse(jsonString);
             nuevoUsuario=reArmar(usuarioJSON);
         } catch (Exception e) {
+            System.out.println("Error " + e);
             nuevoUsuario = null;
         }
         return nuevoUsuario;

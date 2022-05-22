@@ -55,6 +55,11 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
         jTextField1.setForeground(new java.awt.Color(204, 204, 204));
         jTextField1.setText("identificador");
         jTextField1.setEnabled(false);
+        jTextField1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField1MouseClicked(evt);
+            }
+        });
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -67,6 +72,11 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
 
         jTextField2.setForeground(new java.awt.Color(204, 204, 204));
         jTextField2.setText("valor del boleto");
+        jTextField2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField2MouseClicked(evt);
+            }
+        });
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -77,6 +87,11 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
 
         jTextField3.setForeground(new java.awt.Color(204, 204, 204));
         jTextField3.setText("tipo del boleto");
+        jTextField3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField3MouseClicked(evt);
+            }
+        });
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
@@ -217,6 +232,20 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
         JOptionPane.showMessageDialog(null,"Ha sido un placer, vuelva pronto");
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTextField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1MouseClicked
+
+    private void jTextField2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField2MouseClicked
+        // TODO add your handling code here:
+        this.jTextField2.setText("");
+    }//GEN-LAST:event_jTextField2MouseClicked
+
+    private void jTextField3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField3MouseClicked
+        // TODO add your handling code here:
+        this.jTextField3.setText("");
+    }//GEN-LAST:event_jTextField3MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
