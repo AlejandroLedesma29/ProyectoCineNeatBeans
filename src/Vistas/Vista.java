@@ -41,14 +41,6 @@ public class Vista extends javax.swing.JFrame {
         Eboletos = new javax.swing.JMenuItem();
         Epeliculas = new javax.swing.JMenuItem();
         Eusuarios = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        Bboletos = new javax.swing.JMenuItem();
-        Bpeliculas = new javax.swing.JMenuItem();
-        Busuarios = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        Elboletos = new javax.swing.JMenuItem();
-        Elpeliculas = new javax.swing.JMenuItem();
-        Elusuarios = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -105,7 +97,7 @@ public class Vista extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/editar.png"))); // NOI18N
-        jMenu2.setText("Editar");
+        jMenu2.setText("Editar / Buscar / Eliminar");
 
         Eboletos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.ALT_DOWN_MASK));
         Eboletos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/boleto.png"))); // NOI18N
@@ -138,76 +130,6 @@ public class Vista extends javax.swing.JFrame {
         jMenu2.add(Eusuarios);
 
         jMenuBar1.add(jMenu2);
-
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/buscar.png"))); // NOI18N
-        jMenu3.setText("Buscar");
-
-        Bboletos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
-        Bboletos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/boleto.png"))); // NOI18N
-        Bboletos.setText("Boletos");
-        Bboletos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BboletosActionPerformed(evt);
-            }
-        });
-        jMenu3.add(Bboletos);
-
-        Bpeliculas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
-        Bpeliculas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/pelicula.png"))); // NOI18N
-        Bpeliculas.setText("Peliculas");
-        Bpeliculas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BpeliculasActionPerformed(evt);
-            }
-        });
-        jMenu3.add(Bpeliculas);
-
-        Busuarios.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
-        Busuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/usuario.png"))); // NOI18N
-        Busuarios.setText("Usuarios");
-        Busuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BusuariosActionPerformed(evt);
-            }
-        });
-        jMenu3.add(Busuarios);
-
-        jMenuBar1.add(jMenu3);
-
-        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/eliminar.png"))); // NOI18N
-        jMenu4.setText("Eliminar");
-
-        Elboletos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        Elboletos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/boleto.png"))); // NOI18N
-        Elboletos.setText("Boletos");
-        Elboletos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ElboletosActionPerformed(evt);
-            }
-        });
-        jMenu4.add(Elboletos);
-
-        Elpeliculas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        Elpeliculas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/pelicula.png"))); // NOI18N
-        Elpeliculas.setText("Peliculas");
-        Elpeliculas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ElpeliculasActionPerformed(evt);
-            }
-        });
-        jMenu4.add(Elpeliculas);
-
-        Elusuarios.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        Elusuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/usuario.png"))); // NOI18N
-        Elusuarios.setText("Usuarios");
-        Elusuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ElusuariosActionPerformed(evt);
-            }
-        });
-        jMenu4.add(Elusuarios);
-
-        jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
 
@@ -246,28 +168,14 @@ public class Vista extends javax.swing.JFrame {
 
     private void EboletosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EboletosActionPerformed
         // TODO add your handling code here:
-        Editar_boleto ver_ventana = new Editar_boleto();
+        informacion_boleto ver_ventana = new informacion_boleto();
         escritorio.add(ver_ventana);
         ver_ventana.show();
     }//GEN-LAST:event_EboletosActionPerformed
 
-    private void BboletosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BboletosActionPerformed
-        // TODO add your handling code here:
-        Buscar_boleto ver_ventana= new Buscar_boleto();
-        escritorio.add(ver_ventana);
-        ver_ventana.show();
-    }//GEN-LAST:event_BboletosActionPerformed
-
-    private void ElboletosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElboletosActionPerformed
-        // TODO add your handling code here:
-        Eliminar_boleto ver_ventana = new Eliminar_boleto();
-        escritorio.add(ver_ventana);
-        ver_ventana.show();
-    }//GEN-LAST:event_ElboletosActionPerformed
-
     private void EusuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EusuariosActionPerformed
         // TODO add your handling code here:
-        Editar_usuario ver_ventana = new Editar_usuario();
+        informacion_usuario ver_ventana = new informacion_usuario();
         escritorio.add(ver_ventana);
         ver_ventana.show();
     }//GEN-LAST:event_EusuariosActionPerformed
@@ -288,38 +196,10 @@ public class Vista extends javax.swing.JFrame {
 
     private void EpeliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EpeliculasActionPerformed
         // TODO add your handling code here:
-        Editar_pelicula ver_ventana = new Editar_pelicula();
+        informacion_pelicula ver_ventana = new informacion_pelicula();
         escritorio.add(ver_ventana);
         ver_ventana.show();
     }//GEN-LAST:event_EpeliculasActionPerformed
-
-    private void BpeliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BpeliculasActionPerformed
-        // TODO add your handling code here:
-        Buscar_pelicula ver_ventana= new Buscar_pelicula();
-        escritorio.add(ver_ventana);
-        ver_ventana.show();
-    }//GEN-LAST:event_BpeliculasActionPerformed
-
-    private void BusuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusuariosActionPerformed
-        // TODO add your handling code here:
-        Buscar_usuario ver_ventana= new Buscar_usuario();
-        escritorio.add(ver_ventana);
-        ver_ventana.show();
-    }//GEN-LAST:event_BusuariosActionPerformed
-
-    private void ElpeliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElpeliculasActionPerformed
-        // TODO add your handling code here:
-        Eliminar_pelicula ver_ventana = new Eliminar_pelicula();
-        escritorio.add(ver_ventana);
-        ver_ventana.show();
-    }//GEN-LAST:event_ElpeliculasActionPerformed
-
-    private void ElusuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElusuariosActionPerformed
-        // TODO add your handling code here:
-        Eliminar_usuario ver_ventana = new Eliminar_usuario();
-        escritorio.add(ver_ventana);
-        ver_ventana.show();
-    }//GEN-LAST:event_ElusuariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -358,24 +238,16 @@ public class Vista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem Bboletos;
-    private javax.swing.JMenuItem Bpeliculas;
-    private javax.swing.JMenuItem Busuarios;
     private javax.swing.JMenuItem CUsuarios;
     private javax.swing.JMenuItem Cboletos;
     private javax.swing.JMenuItem Cpeliculas;
     private javax.swing.JMenuItem Eboletos;
-    private javax.swing.JMenuItem Elboletos;
-    private javax.swing.JMenuItem Elpeliculas;
-    private javax.swing.JMenuItem Elusuarios;
     private javax.swing.JMenuItem Epeliculas;
     private javax.swing.JMenuItem Eusuarios;
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }

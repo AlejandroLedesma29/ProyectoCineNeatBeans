@@ -11,6 +11,7 @@ import org.json.simple.JSONObject;
  * @author L E D E S M A
  */
 public class Usuario {
+    private String id;
     private String cedula;
     private String nombre;
     private String email;
@@ -19,12 +20,23 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String cedula, String nombre, String email, int anoNacimiento) {
+    public Usuario(String id, String cedula, String nombre, String email, int anoNacimiento) {
+        this.id = id;
         this.cedula = cedula;
         this.nombre = nombre;
         this.email = email;
         this.anoNacimiento = anoNacimiento;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    
 
     /**
      * @return the cedula
