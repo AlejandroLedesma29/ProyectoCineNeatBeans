@@ -112,6 +112,11 @@ public class informacion_pelicula extends javax.swing.JInternalFrame {
 
         btnEliminar.setBackground(new java.awt.Color(255, 51, 51));
         btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Cancelar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -187,7 +192,14 @@ public class informacion_pelicula extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    public void limpiarCampos(){
+        this.txtAno.setText("");
+        this.txtNombre.setText("");
+        this.txtTipo.setText("");
+        this.txtId.setText("");
+    }
+    
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreActionPerformed
@@ -238,6 +250,12 @@ public class informacion_pelicula extends javax.swing.JInternalFrame {
         this.txtAno.setText(""+actualizado.getAno());
         JOptionPane.showMessageDialog(null,"La pelicula ha sido actualizada");
     }//GEN-LAST:event_btnActualizarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        String idpelicula=this.txtId.getText();
+        this.miControladorPelicula.eliminar(idpelicula);
+        JOptionPane.showMessageDialog(null, "Eliminación exitosa");
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
