@@ -119,6 +119,11 @@ public class informacion_pelicula extends javax.swing.JInternalFrame {
 
         btnActualizar.setBackground(new java.awt.Color(0, 153, 255));
         btnActualizar.setText("Actualizar");
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
 
         btnEliminar.setBackground(new java.awt.Color(255, 51, 51));
         btnEliminar.setText("Eliminar");
@@ -232,6 +237,7 @@ public class informacion_pelicula extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
+<<<<<<< HEAD
     private void txtNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreMouseClicked
         // TODO add your handling code here:
         this.txtNombre.setText("");
@@ -246,6 +252,24 @@ public class informacion_pelicula extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         this.txtTipo.setText("");
     }//GEN-LAST:event_txtTipoMouseClicked
+=======
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        String id = this.txtId.getText();
+        int año = Integer.parseInt(this.txtAno.getText());
+        String nombre = this.txtNombre.getText();
+        String tipo = this.txtTipo.getText();
+        
+        Pelicula peliculaActualizar = new Pelicula(nombre, año, tipo);
+        peliculaActualizar.setId(id);
+        
+        Pelicula actualizado=this.miControladorPelicula.actualizar(peliculaActualizar);
+
+        this.txtNombre.setText(actualizado.getNombre());
+        this.txtTipo.setText(actualizado.getTipo());
+        this.txtAno.setText(""+actualizado.getAno());
+        JOptionPane.showMessageDialog(null,"La pelicula ha sido actualizada");
+    }//GEN-LAST:event_btnActualizarActionPerformed
+>>>>>>> affd0e2e5acc683fc7727eb642a86989fa0f09c6
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

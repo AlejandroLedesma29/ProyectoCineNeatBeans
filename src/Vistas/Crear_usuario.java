@@ -250,10 +250,16 @@ public class Crear_usuario extends javax.swing.JInternalFrame {
         nuevo = miControlador.crear(nuevo);
         if(nuevo  ==  null){
             JOptionPane.showMessageDialog(null, "¡Ha ocurrido un error, inténtelo nuevamente!");
+<<<<<<< HEAD
            
         }else{
             this.jTextField1.setText(nuevo.getId());
             JOptionPane.showMessageDialog(null,"El usuario ha sido creado con exito"); 
+=======
+        }else{
+            this.jTextField1.setText(nuevo.getId());
+            JOptionPane.showMessageDialog(null,"El usuario ha sido creado con exito con id "+ nuevo.getId()); 
+>>>>>>> affd0e2e5acc683fc7727eb642a86989fa0f09c6
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 

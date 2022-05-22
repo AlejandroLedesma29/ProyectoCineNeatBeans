@@ -73,6 +73,7 @@ public class controlador_pelicula {
         nuevaPelicula.setId((String) objetoJson.get("_id"));
         nuevaPelicula.setNombre((String) objetoJson.get("nombre"));
         nuevaPelicula.setTipo((String) objetoJson.get("tipo"));
+        nuevaPelicula.setAno((int) (long) objetoJson.get("ano"));
         return nuevaPelicula;
     }
 
