@@ -8,12 +8,12 @@ package Vistas;
  *
  * @author jero7
  */
-public class informacion_boleto extends javax.swing.JInternalFrame {
+public class Informacion_boleto extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Editar_boleto
      */
-    public informacion_boleto() {
+    public Informacion_boleto() {
         initComponents();
     }
 

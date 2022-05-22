@@ -168,7 +168,7 @@ public class Vista extends javax.swing.JFrame {
 
     private void EboletosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EboletosActionPerformed
         // TODO add your handling code here:
-        informacion_boleto ver_ventana = new informacion_boleto();
+        Informacion_boleto ver_ventana = new Informacion_boleto();
         escritorio.add(ver_ventana);
         ver_ventana.show();
     }//GEN-LAST:event_EboletosActionPerformed
