@@ -56,6 +56,11 @@ public class Crear_pelicula extends javax.swing.JInternalFrame {
         txtId.setForeground(new java.awt.Color(204, 204, 204));
         txtId.setText("identificador");
         txtId.setEnabled(false);
+        txtId.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtIdMouseClicked(evt);
+            }
+        });
         txtId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdActionPerformed(evt);
@@ -64,6 +69,11 @@ public class Crear_pelicula extends javax.swing.JInternalFrame {
 
         txtNombre.setForeground(new java.awt.Color(204, 204, 204));
         txtNombre.setText("nombre de la pelicula");
+        txtNombre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtNombreMouseClicked(evt);
+            }
+        });
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreActionPerformed(evt);
@@ -76,6 +86,11 @@ public class Crear_pelicula extends javax.swing.JInternalFrame {
 
         jTextField3.setForeground(new java.awt.Color(204, 204, 204));
         jTextField3.setText("año de la pelicula");
+        jTextField3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField3MouseClicked(evt);
+            }
+        });
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
@@ -86,6 +101,11 @@ public class Crear_pelicula extends javax.swing.JInternalFrame {
 
         jTextField4.setForeground(new java.awt.Color(204, 204, 204));
         jTextField4.setText("tipo de pelicula");
+        jTextField4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField4MouseClicked(evt);
+            }
+        });
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
@@ -206,6 +226,25 @@ public class Crear_pelicula extends javax.swing.JInternalFrame {
         JOptionPane.showMessageDialog(null,"Ha sido un placer, vuelva pronto");
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void txtIdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtIdMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdMouseClicked
+
+    private void txtNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreMouseClicked
+        // TODO add your handling code here:
+        this. txtNombre.setText("");
+    }//GEN-LAST:event_txtNombreMouseClicked
+
+    private void jTextField3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField3MouseClicked
+        // TODO add your handling code here:
+        this.jTextField3.setText("");
+    }//GEN-LAST:event_jTextField3MouseClicked
+
+    private void jTextField4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField4MouseClicked
+        // TODO add your handling code here:
+        this.jTextField4.setText("");
+    }//GEN-LAST:event_jTextField4MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

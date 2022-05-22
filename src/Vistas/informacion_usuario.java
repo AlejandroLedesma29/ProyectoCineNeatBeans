@@ -60,6 +60,11 @@ public class informacion_usuario extends javax.swing.JInternalFrame {
 
         txtCedulaBuscarUsuario.setForeground(new java.awt.Color(204, 204, 204));
         txtCedulaBuscarUsuario.setText("cédula del usuario");
+        txtCedulaBuscarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtCedulaBuscarUsuarioMouseClicked(evt);
+            }
+        });
         txtCedulaBuscarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCedulaBuscarUsuarioActionPerformed(evt);
@@ -78,6 +83,11 @@ public class informacion_usuario extends javax.swing.JInternalFrame {
 
         txtNombreUsuario.setForeground(new java.awt.Color(204, 204, 204));
         txtNombreUsuario.setText("nombre del usuario");
+        txtNombreUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtNombreUsuarioMouseClicked(evt);
+            }
+        });
         txtNombreUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreUsuarioActionPerformed(evt);
@@ -88,6 +98,11 @@ public class informacion_usuario extends javax.swing.JInternalFrame {
 
         txtEmailUsuario.setForeground(new java.awt.Color(204, 204, 204));
         txtEmailUsuario.setText("e-mail del usuario");
+        txtEmailUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtEmailUsuarioMouseClicked(evt);
+            }
+        });
         txtEmailUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailUsuarioActionPerformed(evt);
@@ -275,6 +290,21 @@ public class informacion_usuario extends javax.swing.JInternalFrame {
         JOptionPane.showMessageDialog(null,"Ha sido un placer, vuelva pronto");
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void txtCedulaBuscarUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCedulaBuscarUsuarioMouseClicked
+        // TODO add your handling code here:
+        this.txtCedulaBuscarUsuario.setText("");
+    }//GEN-LAST:event_txtCedulaBuscarUsuarioMouseClicked
+
+    private void txtNombreUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreUsuarioMouseClicked
+        // TODO add your handling code here:
+        this.txtNombreUsuario.setText("");
+    }//GEN-LAST:event_txtNombreUsuarioMouseClicked
+
+    private void txtEmailUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEmailUsuarioMouseClicked
+        // TODO add your handling code here:
+        this.txtEmailUsuario.setText("");
+    }//GEN-LAST:event_txtEmailUsuarioMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
