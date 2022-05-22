@@ -272,6 +272,8 @@ public class informacion_usuario extends javax.swing.JInternalFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null,"Ha sido un placer, vuelva pronto");
+        dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
 

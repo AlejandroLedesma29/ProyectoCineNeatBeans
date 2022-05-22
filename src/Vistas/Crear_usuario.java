@@ -4,6 +4,10 @@
  */
 package Vistas;
 
+import Controladores.controlador_usuario;
+import Modelos.Usuario;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jero7
@@ -13,10 +17,21 @@ public class Crear_usuario extends javax.swing.JInternalFrame {
     /**
      * Creates new form Crear_usuario
      */
+    
+    controlador_usuario miControlador;
+    
     public Crear_usuario() {
         initComponents();
+        String urlServidor = "http://127.0.0.1:8080/";
+        this.miControlador = new controlador_usuario(urlServidor, "/usuarios");
     }
-
+    public void Limpiar_campos_Usuario(){
+        this.jTextField1.setText("");
+        this.jTextField2.setText("");
+        this.jTextField3.setText("");
+        this.jTextField4.setText("");
+        this.jTextField5.setText("");
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -105,6 +120,11 @@ public class Crear_usuario extends javax.swing.JInternalFrame {
 
         jButton4.setBackground(new java.awt.Color(255, 51, 51));
         jButton4.setText("Cancelar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -197,7 +217,24 @@ public class Crear_usuario extends javax.swing.JInternalFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        try{
+        String nombre = this.jTextField2.getText();
+        String cedula = this.jTextField3.getText();
+        String email = this.jTextField4.getText();
+        int anoNacimiento = Integer.parseInt(this.jTextField5.getText());
+        Usuario nuevo  = new Usuario(cedula,nombre,email,anoNacimiento);
+        miControlador.crear(nuevo);
+        JOptionPane.showMessageDialog(null,"El usuario ha sido creado con exito");
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "¡Ha ocurrido un error, inténtelo nuevamente! ->" + e);
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null,"Ha sido un placer, vuelva pronto");
+        dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

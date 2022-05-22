@@ -4,6 +4,8 @@
  */
 package Vistas;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jero7
@@ -280,6 +282,8 @@ public class informacion_boleto extends javax.swing.JInternalFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null,"Ha sido un placer, vuelva pronto");
+        dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
 
