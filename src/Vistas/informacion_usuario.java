@@ -144,6 +144,11 @@ public class informacion_usuario extends javax.swing.JInternalFrame {
 
         jButton2.setBackground(new java.awt.Color(0, 153, 255));
         jButton2.setText("Actualizar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Cancelar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -154,6 +159,11 @@ public class informacion_usuario extends javax.swing.JInternalFrame {
 
         jButton4.setBackground(new java.awt.Color(255, 51, 51));
         jButton4.setText("Eliminar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -305,6 +315,31 @@ public class informacion_usuario extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         this.txtEmailUsuario.setText("");
     }//GEN-LAST:event_txtEmailUsuarioMouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        String cedula = this.txtCedulaUsuario.getText();
+        Usuario encontrado = this.miControlador.buscarPorCedula(cedula);
+        encontrado.setNombre(this.txtNombreUsuario.getText());
+        encontrado.setEmail(this.txtEmailUsuario.getText());
+        encontrado = miControlador.actualizar(encontrado);
+        if(encontrado == null){
+            JOptionPane.showMessageDialog(null,"El usuario NO ha sido actualizado correctamente");
+        }else{
+            JOptionPane.showMessageDialog(null,"El usuario ha sido actualizado correctamente");
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        String cedula = this.txtCedulaBuscarUsuario.getText();
+        Usuario encontrado = this.miControlador.buscarPorCedula(cedula);
+        try{
+        miControlador.eliminar(encontrado.getId());
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null,"Ha ocurrido un error -> " + e);
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

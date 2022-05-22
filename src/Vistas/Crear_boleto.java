@@ -4,19 +4,27 @@
  */
 package Vistas;
 
+import Controladores.controlador_boleto;
+import Modelos.Boleto;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author jero7
  */
+
+    
 public class Crear_boleto extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Crear_boleto
      */
+    controlador_boleto miControlador;
+    
     public Crear_boleto() {
         initComponents();
+        String urlServidor = "http://127.0.0.1:8080";
+        this.miControlador = new controlador_boleto(urlServidor, "/boletos");
     }
 
     /**
@@ -225,6 +233,11 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        double valor = Double.parseDouble(this.jTextField2.getText());
+        String tipo = this.jTextField3.getText();
+        Boleto nuevo = new Boleto(valor,tipo);
+        nuevo = miControlador.crear(nuevo);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

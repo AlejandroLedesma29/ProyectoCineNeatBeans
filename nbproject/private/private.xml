@@ -3,18 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ledes/Documents/NetBeansProjects/ProyectoCineNeatBeans/src/Vistas/Interfaz_principal.java</file>
-            <file>file:/C:/Users/ledes/Documents/NetBeansProjects/ProyectoCineNeatBeans/src/Controladores/controlador_usuario.java</file>
-            <file>file:/C:/Users/ledes/Documents/NetBeansProjects/ProyectoCineNeatBeans/src/Vistas/informacion_usuario.java</file>
-            <file>file:/C:/Users/ledes/Documents/NetBeansProjects/ProyectoCineNeatBeans/src/Modelos/Pelicula.java</file>
-            <file>file:/C:/Users/ledes/Documents/NetBeansProjects/ProyectoCineNeatBeans/src/Vistas/Vista.java</file>
-            <file>file:/C:/Users/ledes/Documents/NetBeansProjects/ProyectoCineNeatBeans/src/Controladores/controlador_pelicula.java</file>
-            <file>file:/C:/Users/ledes/Documents/NetBeansProjects/ProyectoCineNeatBeans/src/Modelos/Usuario.java</file>
-            <file>file:/C:/Users/ledes/Documents/NetBeansProjects/ProyectoCineNeatBeans/src/Vistas/informacion_pelicula.java</file>
-            <file>file:/C:/Users/ledes/Documents/NetBeansProjects/ProyectoCineNeatBeans/src/Vistas/Crear_usuario.java</file>
-            <file>file:/C:/Users/ledes/Documents/NetBeansProjects/ProyectoCineNeatBeans/src/Vistas/Crear_boleto.java</file>
-            <file>file:/C:/Users/ledes/Documents/NetBeansProjects/ProyectoCineNeatBeans/src/Controladores/controlador_boleto.java</file>
-            <file>file:/C:/Users/ledes/Documents/NetBeansProjects/ProyectoCineNeatBeans/src/Vistas/Crear_pelicula.java</file>
+            <file>file:/C:/Users/jero7/OneDrive/Documents/NetBeansProjects/Cine%20Juco/Net/ProyectoCineNeatBeans/src/Vistas/informacion_usuario.java</file>
+            <file>file:/C:/Users/jero7/OneDrive/Documents/NetBeansProjects/Cine%20Juco/Net/ProyectoCineNeatBeans/src/Vistas/Crear_pelicula.java</file>
+            <file>file:/C:/Users/jero7/OneDrive/Documents/NetBeansProjects/Cine%20Juco/Net/ProyectoCineNeatBeans/src/Controladores/controlador_usuario.java</file>
+            <file>file:/C:/Users/jero7/OneDrive/Documents/NetBeansProjects/Cine%20Juco/Net/ProyectoCineNeatBeans/src/Vistas/Crear_usuario.java</file>
+            <file>file:/C:/Users/jero7/OneDrive/Documents/NetBeansProjects/Cine%20Juco/Net/ProyectoCineNeatBeans/src/Vistas/Crear_boleto.java</file>
         </group>
     </open-files>
 </project-private>
