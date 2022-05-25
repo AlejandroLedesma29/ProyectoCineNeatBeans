@@ -98,6 +98,24 @@ public class controlador_usuario {
         }
         return respuesta;
     }
+    
+    public Usuario Buscar_usuario(String cedula){
+        LinkedList<Usuario> respuesta = this.listar();
+        Usuario miUsuario = new Usuario();
+        try{
+            for(Usuario actual:respuesta){
+                if(actual.getCedula() == cedula){
+                    miUsuario = actual;
+                }
+            }
+            
+        } catch (Exception e) {
+            System.out.println("Error " + e);
+            respuesta = null;
+        }
+        return miUsuario;
+    }
+    
     public Usuario actualizar(Usuario actualizado){
         Usuario respuesta=new Usuario();
         try {

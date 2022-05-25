@@ -14,13 +14,40 @@ public class Boleto {
     private String id;
     private double valor;
     private String tipo;
-
+    Usuario miUsuario;
+    Funcion miFuncion;
+    Silla miSilla;
+    
     public Boleto() {
     }
 
     public Boleto(double valor, String tipo) {
         this.valor = valor;
         this.tipo = tipo;
+    }
+
+    public Usuario getMiUsuario() {
+        return miUsuario;
+    }
+
+    public Silla getMiSilla() {
+        return miSilla;
+    }
+
+    public void setMiSilla(Silla miSilla) {
+        this.miSilla = miSilla;
+    }
+    
+    public void setMiUsuario(Usuario miUsuario) {
+        this.miUsuario = miUsuario;
+    }
+
+    public Funcion getMiFuncion() {
+        return miFuncion;
+    }
+
+    public void setMiFuncion(Funcion miFuncion) {
+        this.miFuncion = miFuncion;
     }
     
     /**
