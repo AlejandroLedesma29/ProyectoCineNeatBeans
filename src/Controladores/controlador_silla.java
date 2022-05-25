@@ -4,6 +4,7 @@
  */
 package Controladores;
 
+import Modelos.Sala;
 import Modelos.Silla;
 import Servicios.Servicio;
 import java.util.LinkedList;
@@ -60,7 +61,12 @@ public class controlador_silla {
         nuevaSilla.setId((String) objetoJson.get("_id"));
         nuevaSilla.setLetra((String) objetoJson.get("letra"));
         nuevaSilla.setNumero((int) (long) objetoJson.get("numero"));
-
+        JSONObject sala = (JSONObject) objetoJson.get("sala");
+        Sala nuevaSala = new Sala();
+        nuevaSala.setEfectosEspeciales((boolean) sala.get("efectosEspeciales"));
+        nuevaSala.setId((String)sala.get("_id"));
+        nuevaSala.setNombre((String)sala.get("nombre"));
+        nuevaSilla.setMiSala(nuevaSala);
         return nuevaSilla;
     }
 

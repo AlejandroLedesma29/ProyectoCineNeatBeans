@@ -113,6 +113,7 @@
             </MenuItem>
           </SubComponents>
         </Menu>
+<<<<<<< HEAD
         <Menu class="javax.swing.JMenu" name="jMenu3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -124,6 +125,8 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenu3MouseClicked"/>
           </Events>
         </Menu>
+=======
+>>>>>>> 1b762262bbb9dfd2a59670a1f65270cbc44914ab
       </SubComponents>
     </Menu>
   </NonVisualComponents>

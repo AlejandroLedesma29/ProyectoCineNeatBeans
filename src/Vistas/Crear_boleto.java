@@ -6,10 +6,17 @@ package Vistas;
 
 import Controladores.controlador_boleto;
 import Controladores.controlador_funciones;
+<<<<<<< HEAD
 import Controladores.controlador_usuario;
 import Modelos.Boleto;
 import Modelos.Funcion;
 import Modelos.Usuario;
+=======
+import Controladores.controlador_silla;
+import Modelos.Boleto;
+import Modelos.Funcion;
+import Modelos.Silla;
+>>>>>>> 1b762262bbb9dfd2a59670a1f65270cbc44914ab
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
 
@@ -26,13 +33,18 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
      */
     controlador_boleto miControlador;
     controlador_funciones miControladorFunciones;
+<<<<<<< HEAD
     controlador_usuario miControladorUsuario;
+=======
+    controlador_silla miControladorSillas;
+>>>>>>> 1b762262bbb9dfd2a59670a1f65270cbc44914ab
     
     public Crear_boleto() {
         initComponents();
         String urlServidor = "http://127.0.0.1:8080";
         this.miControlador = new controlador_boleto(urlServidor, "/boletos");
         this.miControladorFunciones = new controlador_funciones( urlServidor, "/funciones");
+        this.miControladorSillas = new controlador_silla(urlServidor, "/sillas");
         actualizarCBFunciones();
     }
 
@@ -58,8 +70,9 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         CBFuncion = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        CBSillas = new javax.swing.JComboBox<>();
         txtCedula = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -135,8 +148,13 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
         jLabel6.setText("Seleccione función");
 
         CBFuncion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CBFuncion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CBFuncionActionPerformed(evt);
+            }
+        });
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CBSillas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         txtCedula.setForeground(new java.awt.Color(204, 204, 204));
         txtCedula.setText("Cédula Usuario");
@@ -148,6 +166,13 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
         txtCedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCedulaActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Seleccionar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
             }
         });
 
@@ -183,6 +208,7 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(94, 94, 94))
@@ -196,6 +222,43 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addGap(286, 286, 286))
+=======
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(122, 122, 122)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton2))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextField1)
+                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(41, 41, 41)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(CBSillas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(CBFuncion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jTextField3)
+                                    .addComponent(txtCedula)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(288, 288, 288)
+                        .addComponent(jLabel5))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(283, 283, 283)
+                        .addComponent(jLabel6))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(278, 278, 278)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton3)
+                            .addComponent(jLabel4))))
+                .addContainerGap(151, Short.MAX_VALUE))
+>>>>>>> 1b762262bbb9dfd2a59670a1f65270cbc44914ab
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,14 +281,25 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
                 .addComponent(jLabel6)
                 .addGap(12, 12, 12)
                 .addComponent(CBFuncion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+>>>>>>> 1b762262bbb9dfd2a59670a1f65270cbc44914ab
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53)
                 .addComponent(jLabel5)
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+=======
+                .addGap(21, 21, 21)
+                .addComponent(CBSillas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+>>>>>>> 1b762262bbb9dfd2a59670a1f65270cbc44914ab
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
@@ -296,13 +370,56 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCedulaActionPerformed
 
+    public LinkedList<Silla> listarSillas(String idSala){
+        LinkedList<Silla> respuesta = new LinkedList<>();
+        LinkedList<Silla> todas = this.miControladorSillas.listar();
+        if (todas != null){
+            for(Silla actual:todas){
+                if (actual.getMiSala().getId().equals(idSala)){
+                    respuesta.add(actual);
+                }
+            }
+        }
+        return respuesta;
+    }
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        String nombre = ""+this.CBFuncion.getSelectedItem();
+        LinkedList<Funcion> lista = miControladorFunciones.listar();
+        LinkedList<Silla> sillas = new LinkedList<>();
+        if (lista != null){
+            for (Funcion Actual : lista) {
+                String opcion = ""+Actual.getMiPelicula().getNombre()+"  Hora "+Actual.getHora()+":00 " + Actual.getDia()+"/"+Actual.getMes()+"/"+Actual.getAno();
+                if(nombre.equals(opcion)){
+                   sillas  = listarSillas(Actual.getMiSala().getId());
+                }
+            }
+            actualizarCBSillas(sillas);
+        }
+
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    public void actualizarCBSillas(LinkedList<Silla> misSillas ){
+        this.CBSillas.removeAllItems();
+        if (misSillas != null){
+            for (Silla Actual : misSillas) {
+                String opcion = ""+Actual.getLetra()+""+Actual.getNumero();
+                this.CBSillas.addItem(opcion);
+            }
+        }
+    }
+    
+    private void CBFuncionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBFuncionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CBFuncionActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CBFuncion;
+    private javax.swing.JComboBox<String> CBSillas;
     private javax.swing.Box.Filler filler1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

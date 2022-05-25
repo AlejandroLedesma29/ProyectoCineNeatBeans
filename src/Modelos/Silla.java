@@ -14,6 +14,7 @@ public class Silla {
     private String _id;
     private String letra;
     private int numero;
+    private Sala miSala;
 
     public Silla() {
     }
@@ -71,5 +72,19 @@ public class Silla {
      */
     public void setId(String _id) {
         this._id = _id;
+    }
+
+    /**
+     * @return the miSala
+     */
+    public Sala getMiSala() {
+        return miSala;
+    }
+
+    /**
+     * @param miSala the miSala to set
+     */
+    public void setMiSala(Sala miSala) {
+        this.miSala = miSala;
     }
 }
