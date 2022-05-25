@@ -55,9 +55,9 @@ public class Servicio {
             System.out.println(response.body());
             respuesta = response.body();
         } catch (IOException ex) {
-            System.out.println("Error: " + ex);
+            System.out.println("ACA Error: " + ex);
         } catch (InterruptedException ex) {
-            System.out.println("Error: " + ex);
+            System.out.println("CASI Error: " + ex);
         }
         return respuesta;
     }

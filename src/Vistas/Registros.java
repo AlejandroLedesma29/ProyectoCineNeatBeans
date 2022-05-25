@@ -145,16 +145,16 @@ public void ActualizarTablaBoletos() {
         String TitulosColumnas[] = {"Valor","Tipo","Cedula usuario","Fecha de funcion","Letra y numero de silla"};
         DefaultTableModel miModelo = new DefaultTableModel(null, TitulosColumnas);
         this.jTable1.setModel(miModelo);
-        LinkedList<Boleto> lista = miControlador_boleto.listar();
+        LinkedList<Boleto> lista = this.miControlador_boleto.listar();
         if(lista != null){
             for (Boleto actual:lista) {
-            String fila[] = new String[TitulosColumnas.length];
-            fila[0] = ""+actual.getValor();
-            fila[1] = actual.getTipo();
-            fila[2] = actual.getMiUsuario().getCedula();
-            fila[3] = actual.getMiFuncion().getDia()+" / "+actual.getMiFuncion().getMes()+" / "+actual.getMiFuncion().getAno();
-            fila[4] = actual.getMiSilla().getLetra() + " # " + actual.getMiSilla().getNumero();
-            miModelo.addRow(fila);
+                String fila[] = new String[TitulosColumnas.length];
+                fila[0] = ""+actual.getValor();
+                fila[1] = actual.getTipo();
+                fila[2] = actual.getMiUsuario().getCedula();
+                fila[3] = actual.getMiFuncion().getDia()+" / "+actual.getMiFuncion().getMes()+" / "+actual.getMiFuncion().getAno();
+                fila[4] = actual.getMiSilla().getLetra() + " # " + actual.getMiSilla().getNumero();
+                miModelo.addRow(fila);
         }
         }else{
             JOptionPane.showMessageDialog(null,"Aún no hay registrados boletos");
@@ -198,9 +198,10 @@ public void ActualizarTablaUsuarios() {
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ActualizarTablaBoletos();
+
         ActualizarTablaPeliculas();
         ActualizarTablaUsuarios();
+        ActualizarTablaBoletos();
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

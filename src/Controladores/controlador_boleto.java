@@ -76,7 +76,7 @@ public class controlador_boleto {
         Boleto nuevoBoleto=new Boleto();
         nuevoBoleto.setId((String) objetoJson.get("_id"));
         nuevoBoleto.setTipo((String) objetoJson.get("tipo"));
-        nuevoBoleto.setValor(Double.parseDouble((objetoJson.get("valor"))));
+        nuevoBoleto.setValor((double)objetoJson.get("valor"));
         
         JSONObject funcion = (JSONObject) objetoJson.get("funcion");      
         nuevoBoleto.setMiFuncion(setearFuncion(funcion));
@@ -85,9 +85,9 @@ public class controlador_boleto {
         nuevoBoleto.setMiUsuario(setearUsuario(usuario));
         
         
-        JSONObject silla = (JSONObject) objetoJson.get("funcion");
+        JSONObject silla = (JSONObject) objetoJson.get("silla");
         nuevoBoleto.setMiSilla(setearSilla(silla));
-        
+
         return nuevoBoleto;
     }
     public Silla setearSilla(JSONObject silla){
@@ -113,8 +113,8 @@ public class controlador_boleto {
         funcionN.setAno((int) (long) funcion.get("ano"));
         funcionN.setId((String)funcion.get("_id"));
         funcionN.setHora((int) (long) funcion.get("nombre"));
-        funcionN.setDia((int) (long) funcion.get("tipo"));
-        funcionN.setMes((int) (long) funcion.get("tipo"));
+        funcionN.setDia((int) (long) funcion.get("dia"));
+        funcionN.setMes((int) (long) funcion.get("mes"));
         return funcionN;
     }
     
@@ -124,11 +124,11 @@ public class controlador_boleto {
             String endPoint = this.subUrl;
             String resultado = this.miServicio.GET(endPoint);
             JSONParser parser = new JSONParser();
-            JSONArray BoletoJSON = (JSONArray) parser.parse(resultado);
-            for (Object actual : BoletoJSON) {
-                JSONObject usuarioJSON= (JSONObject) actual;
+            JSONArray boletosJSON = (JSONArray) parser.parse(resultado);
+            for (Object actual : boletosJSON) {
+                JSONObject boletoJSON= (JSONObject) actual;
                 Boleto nuevoBoleto=new Boleto();
-                nuevoBoleto=reArmar(usuarioJSON);
+                nuevoBoleto=reArmar(boletoJSON);
                 respuesta.add(nuevoBoleto);
             }
         } catch (Exception e) {
@@ -137,6 +137,7 @@ public class controlador_boleto {
         }
         return respuesta;
     }
+    
     public Boleto actualizar(Boleto actualizado){
         Boleto respuesta=new Boleto();
         try {
