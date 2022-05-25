@@ -11,7 +11,7 @@ import org.json.simple.JSONObject;
  * @author L E D E S M A
  */
 public class Boleto {
-    private String id;
+    private String _id;
     private double valor;
     private String tipo;
 
@@ -60,10 +60,10 @@ public class Boleto {
     }
 
     public String getId() {
-        return id;
+        return _id;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this._id = id;
     }
 }

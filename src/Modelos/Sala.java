@@ -12,9 +12,9 @@ import org.json.simple.JSONObject;
  * @author L E D E S M A
  */
 public class Sala {
+    private String _id;
     private String nombre;
     private boolean EfectosEspeciales;
-    private LinkedList<Silla> misSillas;
 
     public Sala() {
     }
@@ -61,16 +61,18 @@ public class Sala {
     }
 
     /**
-     * @return the misSillas
+     * @return the _id
      */
-    public LinkedList<Silla> getMisSillas() {
-        return misSillas;
+    public String getId() {
+        return _id;
     }
 
     /**
-     * @param misSillas the misSillas to set
+     * @param _id the _id to set
      */
-    public void setMisSillas(LinkedList<Silla> misSillas) {
-        this.misSillas = misSillas;
+    public void setId(String _id) {
+        this._id = _id;
     }
+
+
 }

@@ -6,6 +6,7 @@ package Controladores;
 
 import Modelos.Funcion;
 import Modelos.Pelicula;
+import Modelos.Sala;
 import Servicios.Servicio;
 import java.util.LinkedList;
 import org.json.simple.JSONArray;
@@ -70,6 +71,12 @@ public class controlador_funciones {
         pelicula.setNombre((String)peli.get("nombre"));
         pelicula.setTipo((String)peli.get("tipo"));
         nuevaFuncion.setMiPelicula(pelicula);
+        JSONObject sala = (JSONObject) objetoJson.get("sala");
+        Sala nuevaSala = new Sala();
+        nuevaSala.setEfectosEspeciales((boolean) sala.get("efectosEspeciales"));
+        nuevaSala.setId((String)sala.get("_id"));
+        nuevaSala.setNombre((String)sala.get("nombre"));
+        nuevaFuncion.setMiSala(nuevaSala);
         return nuevaFuncion;
     }
 
