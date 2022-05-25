@@ -27,7 +27,7 @@ public class Registros extends javax.swing.JInternalFrame {
      */
     public Registros() {
         initComponents();
-        String urlServidor = "http://127.0.0.1:8080/";
+        String urlServidor = "http://127.0.0.1:8080";
         this.miControlador_boleto = new controlador_boleto(urlServidor, "/boletos");
         this.miControlador_pelicula = new controlador_pelicula(urlServidor, "/peliculas");
         this.miControlador_usuario = new controlador_usuario(urlServidor, "/usuarios");
