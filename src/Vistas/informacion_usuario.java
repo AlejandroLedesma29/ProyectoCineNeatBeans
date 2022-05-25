@@ -21,7 +21,7 @@ public class informacion_usuario extends javax.swing.JInternalFrame {
     
     public informacion_usuario() {
         initComponents();
-        String urlServidor = "http://127.0.0.1:8080/";
+        String urlServidor = "http://127.0.0.1:8080";
         this.miControlador = new controlador_usuario(urlServidor, "/usuarios");
     }
     
@@ -271,7 +271,7 @@ public class informacion_usuario extends javax.swing.JInternalFrame {
             this.txtEmailUsuario.setText(encontrado.getEmail());
             this.txtAñoNacimientoUsuario.setText(""+encontrado.getAnoNacimiento());
         } else {
-            JOptionPane.showMessageDialog(null, "No se encontró el estudiante");
+            JOptionPane.showMessageDialog(null, "No se encontró el Usuario");
         }
     }//GEN-LAST:event_btnBuscarUsuarioActionPerformed
 
@@ -329,13 +329,23 @@ public class informacion_usuario extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null,"El usuario ha sido actualizado correctamente");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
-
+    public void limpiarCampos(){
+        this.txtAñoNacimientoUsuario.setText("");
+        this.txtCedulaBuscarUsuario.setText("");
+        this.txtEmailUsuario.setText("");
+        this.txtCedulaUsuario.setText("");
+        this.txtNombreUsuario.setText("");
+        this.txtIdUsuario.setText("");
+        
+    }
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         String cedula = this.txtCedulaBuscarUsuario.getText();
         Usuario encontrado = this.miControlador.buscarPorCedula(cedula);
         try{
         miControlador.eliminar(encontrado.getId());
+        JOptionPane.showMessageDialog(null, "Eliminación exitosa");
+        limpiarCampos();
         }catch (Exception e){
             JOptionPane.showMessageDialog(null,"Ha ocurrido un error -> " + e);
         }

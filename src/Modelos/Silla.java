@@ -11,6 +11,7 @@ import org.json.simple.JSONObject;
  * @author L E D E S M A
  */
 public class Silla {
+    private String _id;
     private String letra;
     private int numero;
 
@@ -56,5 +57,19 @@ public class Silla {
         respuesta.put("numero", this.getNumero());
        
         return respuesta;
+    }
+
+    /**
+     * @return the _id
+     */
+    public String getId() {
+        return _id;
+    }
+
+    /**
+     * @param _id the _id to set
+     */
+    public void setId(String _id) {
+        this._id = _id;
     }
 }

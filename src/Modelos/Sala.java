@@ -4,6 +4,7 @@
  */
 package Modelos;
 
+import java.util.LinkedList;
 import org.json.simple.JSONObject;
 
 /**
@@ -13,6 +14,7 @@ import org.json.simple.JSONObject;
 public class Sala {
     private String nombre;
     private boolean EfectosEspeciales;
+    private LinkedList<Silla> misSillas;
 
     public Sala() {
     }
@@ -56,5 +58,19 @@ public class Sala {
         respuesta.put("efectosEspeciales", this.isEfectosEspeciales());
         
         return respuesta;
+    }
+
+    /**
+     * @return the misSillas
+     */
+    public LinkedList<Silla> getMisSillas() {
+        return misSillas;
+    }
+
+    /**
+     * @param misSillas the misSillas to set
+     */
+    public void setMisSillas(LinkedList<Silla> misSillas) {
+        this.misSillas = misSillas;
     }
 }

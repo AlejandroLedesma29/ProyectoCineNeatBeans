@@ -11,10 +11,13 @@ import org.json.simple.JSONObject;
  * @author L E D E S M A
  */
 public class Funcion {
+    private String _id;
     private int hora;
     private int dia;
     private int mes;
     private int ano;
+    private Pelicula miPelicula;
+    private Sala miSala;
 
     public Funcion() {
     }
@@ -90,5 +93,47 @@ public class Funcion {
         respuesta.put("ano", this.getAno());
 
         return respuesta;
+    }
+
+    /**
+     * @return the _id
+     */
+    public String getId() {
+        return _id;
+    }
+
+    /**
+     * @param _id the _id to set
+     */
+    public void setId(String _id) {
+        this._id = _id;
+    }
+
+    /**
+     * @return the miPelicula
+     */
+    public Pelicula getMiPelicula() {
+        return miPelicula;
+    }
+
+    /**
+     * @param miPelicula the miPelicula to set
+     */
+    public void setMiPelicula(Pelicula miPelicula) {
+        this.miPelicula = miPelicula;
+    }
+
+    /**
+     * @return the miSala
+     */
+    public Sala getMiSala() {
+        return miSala;
+    }
+
+    /**
+     * @param miSala the miSala to set
+     */
+    public void setMiSala(Sala miSala) {
+        this.miSala = miSala;
     }
 }
