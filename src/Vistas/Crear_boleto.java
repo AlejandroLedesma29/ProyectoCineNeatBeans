@@ -6,17 +6,12 @@ package Vistas;
 
 import Controladores.controlador_boleto;
 import Controladores.controlador_funciones;
-<<<<<<< HEAD
+import Controladores.controlador_silla;
 import Controladores.controlador_usuario;
 import Modelos.Boleto;
 import Modelos.Funcion;
-import Modelos.Usuario;
-=======
-import Controladores.controlador_silla;
-import Modelos.Boleto;
-import Modelos.Funcion;
 import Modelos.Silla;
->>>>>>> 1b762262bbb9dfd2a59670a1f65270cbc44914ab
+import Modelos.Usuario;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
 
@@ -33,11 +28,8 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
      */
     controlador_boleto miControlador;
     controlador_funciones miControladorFunciones;
-<<<<<<< HEAD
     controlador_usuario miControladorUsuario;
-=======
     controlador_silla miControladorSillas;
->>>>>>> 1b762262bbb9dfd2a59670a1f65270cbc44914ab
     
     public Crear_boleto() {
         initComponents();
@@ -208,7 +200,6 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(94, 94, 94))
@@ -222,7 +213,6 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addGap(286, 286, 286))
-=======
                     .addGroup(layout.createSequentialGroup()
                         .addGap(122, 122, 122)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -258,7 +248,6 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
                             .addComponent(jButton3)
                             .addComponent(jLabel4))))
                 .addContainerGap(151, Short.MAX_VALUE))
->>>>>>> 1b762262bbb9dfd2a59670a1f65270cbc44914ab
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -281,25 +270,16 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
                 .addComponent(jLabel6)
                 .addGap(12, 12, 12)
                 .addComponent(CBFuncion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-=======
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addComponent(jButton3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
->>>>>>> 1b762262bbb9dfd2a59670a1f65270cbc44914ab
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53)
                 .addComponent(jLabel5)
-<<<<<<< HEAD
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-=======
                 .addGap(21, 21, 21)
                 .addComponent(CBSillas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
->>>>>>> 1b762262bbb9dfd2a59670a1f65270cbc44914ab
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
