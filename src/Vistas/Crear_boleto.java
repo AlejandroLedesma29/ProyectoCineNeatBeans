@@ -304,6 +304,7 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
 
     private void txtCedulaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCedulaMouseClicked
         // TODO add your handling code here:
+         this.txtCedula.setText("");
     }//GEN-LAST:event_txtCedulaMouseClicked
 
     private void txtCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaActionPerformed

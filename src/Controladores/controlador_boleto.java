@@ -40,20 +40,6 @@ public class controlador_boleto {
         }
         return respuesta;
     }
-    /*
-    public Boleto buscarPorNombre(String nombre) {
-        Boleto respuesta = new Boleto();
-        try {
-            String endPoint = this.subUrl + "/nombre/" + nombre;
-            String resultado = this.miServicio.GET(endPoint);
-            respuesta = procesarJson(resultado);
-        } catch (Exception e) {
-            System.out.println("Error " + e);
-            respuesta = null;
-        }
-        return respuesta;
-    }
-*/
 
     public void eliminar(String id) {
         String endPoint = this.subUrl + "/" + id;
@@ -150,4 +136,10 @@ public class controlador_boleto {
         }
         return respuesta;
     }
+    
+    
+    
+    
+    
+    
 }
