@@ -14,6 +14,7 @@ import Modelos.Silla;
 import Modelos.Usuario;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
+import org.json.simple.JSONObject;
 
 /**
  *
@@ -35,6 +36,7 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
         initComponents();
         String urlServidor = "http://127.0.0.1:8080";
         this.miControlador = new controlador_boleto(urlServidor, "/boletos");
+        this.miControladorUsuario = new controlador_usuario( urlServidor, "/usuarios");
         this.miControladorFunciones = new controlador_funciones( urlServidor, "/funciones");
         this.miControladorSillas = new controlador_silla(urlServidor, "/sillas");
         actualizarCBFunciones();
@@ -162,6 +164,11 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
         });
 
         jButton3.setText("Seleccionar");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -275,13 +282,31 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         double valor = Double.parseDouble(this.jTextField2.getText());
+        String funcion = ""+this.CBFuncion.getSelectedItem();
         String tipo = this.jTextField3.getText();
         Boleto nuevo = new Boleto(valor,tipo);
-        nuevo = miControlador.crear(nuevo);
         Usuario miUsuario = this.miControladorUsuario.Buscar_usuario(this.txtCedula.getText());
-        nuevo.setMiUsuario(miUsuario);
+        Funcion miFuncion = EncontrarFuncion(funcion);
+        String idSala = miFuncion.getMiSala().getId();
+        LinkedList<Silla> sillas = listarSillas(idSala);
+        String cbSilla = ""+this.CBSillas.getSelectedItem();
+        Silla miSilla = this.miControladorSillas.Buscar_silla(sillas, cbSilla);
+        
+        nuevo = this.miControlador.crear(nuevo);
+        if (nuevo == null) {
+            JOptionPane.showMessageDialog(null, "Problemas al crear el boleto");
+        } else {
+            JOptionPane.showMessageDialog(null, "Pelicula creado exitosamente con id " + nuevo.getId());
+            this.jTextField1.setText(nuevo.getId());
+            JSONObject object = new JSONObject();
+            this.miControlador.enlaceFuncionBoleto(miFuncion.getId(),this.jTextField1.getText(),object);
+            this.miControlador.enlaceSillaBoleto(miSilla.getId(),this.jTextField1.getText(),object);
+            this.miControlador.enlaceUsuarioBoleto(miUsuario.getId(),this.jTextField1.getText(),object);
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
-
+   
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(null,"Ha sido un placer, vuelva pronto");
@@ -322,20 +347,27 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
         }
         return respuesta;
     }
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        String nombre = ""+this.CBFuncion.getSelectedItem();
+    
+   public Funcion EncontrarFuncion(String txt){
+        Funcion miFuncion = new Funcion();
         LinkedList<Funcion> lista = miControladorFunciones.listar();
         LinkedList<Silla> sillas = new LinkedList<>();
         if (lista != null){
             for (Funcion Actual : lista) {
                 String opcion = ""+Actual.getMiPelicula().getNombre()+"  Hora "+Actual.getHora()+":00 " + Actual.getDia()+"/"+Actual.getMes()+"/"+Actual.getAno();
-                if(nombre.equals(opcion)){
-                   sillas  = listarSillas(Actual.getMiSala().getId());
+                if(opcion.equals(txt)){
+                   miFuncion = Actual;
                 }
             }
-            actualizarCBSillas(sillas);
         }
-
+        return miFuncion;
+   }
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        String nombre = ""+this.CBFuncion.getSelectedItem();
+        LinkedList<Silla> sillas = new LinkedList<>();
+        Funcion miFuncion = EncontrarFuncion(nombre);
+        sillas  = listarSillas(miFuncion.getMiSala().getId());
+        actualizarCBSillas(sillas);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     public void actualizarCBSillas(LinkedList<Silla> misSillas ){
@@ -351,6 +383,10 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
     private void CBFuncionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBFuncionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CBFuncionActionPerformed
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        this.CBFuncion.setEnabled(false);
+    }//GEN-LAST:event_jButton3MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

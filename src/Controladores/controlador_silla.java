@@ -43,7 +43,18 @@ public class controlador_silla {
         String endPoint = this.subUrl + "/" + id;
         this.miServicio.DELETE(endPoint);
     }
-
+    
+    public Silla Buscar_silla(LinkedList<Silla>sillas,String letra_numero){
+        Silla encontrada = new Silla();
+        for(Silla Actual:sillas){
+            String letra_numero_buscado = ""+Actual.getLetra()+""+Actual.getNumero();
+            if(letra_numero.equals(letra_numero)){
+                encontrada = Actual;
+            }
+        }
+        return encontrada;
+    }
+    
     public Silla procesarJson(String jsonString) {
         Silla nuevaSilla = new Silla();
         try {

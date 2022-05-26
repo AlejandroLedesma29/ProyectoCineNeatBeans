@@ -146,6 +146,7 @@ public void ActualizarTablaBoletos() {
         DefaultTableModel miModelo = new DefaultTableModel(null, TitulosColumnas);
         this.jTable1.setModel(miModelo);
         LinkedList<Boleto> lista = this.miControlador_boleto.listar();
+        
         if(lista != null){
             for (Boleto actual:lista) {
                 String fila[] = new String[TitulosColumnas.length];

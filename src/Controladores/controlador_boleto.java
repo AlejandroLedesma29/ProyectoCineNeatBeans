@@ -40,20 +40,6 @@ public class controlador_boleto {
         }
         return respuesta;
     }
-    /*
-    public Boleto buscarPorNombre(String nombre) {
-        Boleto respuesta = new Boleto();
-        try {
-            String endPoint = this.subUrl + "/nombre/" + nombre;
-            String resultado = this.miServicio.GET(endPoint);
-            respuesta = procesarJson(resultado);
-        } catch (Exception e) {
-            System.out.println("Error " + e);
-            respuesta = null;
-        }
-        return respuesta;
-    }
-*/
 
     public void eliminar(String id) {
         String endPoint = this.subUrl + "/" + id;
@@ -71,25 +57,29 @@ public class controlador_boleto {
         }
         return nuevoBoleto;
     }
-
+    
+    public void enlaceUsuarioBoleto(String id_usuario, String id_boleto, JSONObject objetoJson){
+        String endPoint = this.subUrl+"/"+id_boleto+"/usuario/"+id_usuario;
+        this.miServicio.PUT(endPoint, objetoJson);
+    }
+    
+    public void enlaceFuncionBoleto(String id_funcion, String id_boleto, JSONObject objetoJson){
+        String endPoint = this.subUrl+"/"+id_boleto+"/funcion/"+id_funcion;
+        this.miServicio.PUT(endPoint, objetoJson);
+    }
+    
+    public void enlaceSillaBoleto(String id_silla, String id_boleto, JSONObject objetoJson){
+        String endPoint = this.subUrl+"/"+id_boleto+"/silla/"+id_silla;
+        this.miServicio.PUT(endPoint, objetoJson);
+    }
     public Boleto reArmar(JSONObject objetoJson) {
         Boleto nuevoBoleto=new Boleto();
         nuevoBoleto.setId((String) objetoJson.get("_id"));
         nuevoBoleto.setTipo((String) objetoJson.get("tipo"));
         nuevoBoleto.setValor((double)objetoJson.get("valor"));
-        
-        JSONObject funcion = (JSONObject) objetoJson.get("funcion");      
-        nuevoBoleto.setMiFuncion(setearFuncion(funcion));
-        
-        JSONObject usuario = (JSONObject) objetoJson.get("usuario");
-        nuevoBoleto.setMiUsuario(setearUsuario(usuario));
-        
-        
-        JSONObject silla = (JSONObject) objetoJson.get("silla");
-        nuevoBoleto.setMiSilla(setearSilla(silla));
-
         return nuevoBoleto;
     }
+    
     public Silla setearSilla(JSONObject silla){
         Silla sillaN = new Silla();
         sillaN.setNumero((int) (long) silla.get("numero"));

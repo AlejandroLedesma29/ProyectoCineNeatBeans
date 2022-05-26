@@ -100,11 +100,11 @@ public class controlador_usuario {
     }
     
     public Usuario Buscar_usuario(String cedula){
-        LinkedList<Usuario> respuesta = this.listar();
+        LinkedList<Usuario> respuesta = listar();
         Usuario miUsuario = new Usuario();
         try{
             for(Usuario actual:respuesta){
-                if(actual.getCedula() == cedula){
+                if(actual.getCedula().equals(cedula)){
                     miUsuario = actual;
                 }
             }

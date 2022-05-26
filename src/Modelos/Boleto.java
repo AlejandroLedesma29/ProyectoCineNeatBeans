@@ -26,6 +26,8 @@ public class Boleto {
         this.tipo = tipo;
     }
 
+    
+
     public Usuario getMiUsuario() {
         return miUsuario;
     }
@@ -82,7 +84,9 @@ public class Boleto {
         JSONObject respuesta=new JSONObject();
         respuesta.put("valor", this.getValor());
         respuesta.put("tipo", this.getTipo());
-        
+        respuesta.put("funcion", this.getMiFuncion());
+        respuesta.put("usuario",this.getMiUsuario());
+        respuesta.put("silla",this.getMiSilla());
         return respuesta;
     }
 

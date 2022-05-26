@@ -220,7 +220,7 @@ public class Crear_pelicula extends javax.swing.JInternalFrame {
         Pelicula nueva = new Pelicula(nombre, ano, tipo);
         nueva = this.miControladorPelicula.crear(nueva);
         if (nueva == null) {
-            JOptionPane.showMessageDialog(null, "Problemas al crear el estudiante");
+            JOptionPane.showMessageDialog(null, "Problemas al crear el Pelicula");
         } else {
             JOptionPane.showMessageDialog(null, "Pelicula creado exitosamente con id " + nueva.getId());
             this.txtId.setText(nueva.getId());
