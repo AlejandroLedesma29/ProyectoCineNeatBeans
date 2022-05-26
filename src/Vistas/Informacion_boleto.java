@@ -21,7 +21,7 @@ public class Informacion_boleto extends javax.swing.JInternalFrame {
     public Informacion_boleto() {
         initComponents();
         String urlServidor = "http://127.0.0.1:8080";
-        this.miControlador_boleto = new controlador_boleto(urlServidor, "/boletos");
+        this.miControlador_boleto = new controlador_boleto(urlServidor,"/boletos");
     }
 
     /**
@@ -110,7 +110,7 @@ public class Informacion_boleto extends javax.swing.JInternalFrame {
 
         jTextField4.setForeground(new java.awt.Color(204, 204, 204));
         jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField4.setText("Nombre del usuario del boleto");
+        jTextField4.setText("Cèdula del usuario del boleto");
         jTextField4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTextField4MouseClicked(evt);
@@ -275,22 +275,18 @@ public class Informacion_boleto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextField3ActionPerformed
 
     public Boleto buscar_boleto(String usuario,String fecha_funcion,String silla){
-        Boleto encontrado = null;
-        boolean bandera = false;
-        LinkedList<Boleto>lista = this.miControlador_boleto.listar();
-        int i = 0;
-        while (i<lista.size() && bandera == false){
-            Boleto actual = lista.get(i);
-            if(actual.getMiUsuario().getNombre().equals(usuario) && (""+actual.getMiFuncion().getDia()+actual.getMiFuncion().getMes()+actual.getMiFuncion().getAno()).equals(fecha_funcion) && (""+actual.getMiSilla().getLetra()+actual.getMiSilla().getNumero()).equals(silla)){
-             encontrado = actual;
-             bandera = true;
+        Boleto boleto = new Boleto();
+        LinkedList<Boleto> Boletos = this.miControlador_boleto.listar();
+        for (Boleto boletoActual : Boletos) {
+            if ((""+boletoActual.getMiFuncion().getDia()+boletoActual.getMiFuncion().getMes()+boletoActual.getMiFuncion().getAno()).equals(fecha_funcion)) {
+                if (boletoActual.getMiUsuario().getCedula().equals(usuario)) {
+                    if (silla.equals(boletoActual.getMiSilla().getLetra()+boletoActual.getMiSilla().getNumero())) {
+                        boleto = boletoActual;
+                    }
+                }
             }
-            i++;
         }
-        if(encontrado == null){
-            JOptionPane.showMessageDialog(null,"Los datos ingresados no coinciden con ningún boleto, por favor, intentelo nuevamente");
-        }
-        return encontrado;
+        return boleto;
     }
     
     
@@ -299,10 +295,10 @@ public class Informacion_boleto extends javax.swing.JInternalFrame {
         this.jTextField2.setEnabled(true);
         this.jTextField3.setEnabled(true);
         this.jTextField4.setEnabled(true);
-        String nombre_usuario = this.jTextField4.getText();
+        String cedula = this.jTextField4.getText();
         String fecha_funcion = this.jTextField5.getText();
         String silla = this.jTextField6.getText();
-        Boleto buscado = buscar_boleto(nombre_usuario,fecha_funcion, silla);      
+        Boleto buscado = buscar_boleto(cedula,fecha_funcion, silla);      
         if(buscado != null){
             this.jTextField1.setText(buscado.getId());
             this.jTextField2.setText(""+buscado.getValor());

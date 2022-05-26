@@ -21,10 +21,18 @@ import org.json.simple.parser.JSONParser;
 public class controlador_boleto {
     Servicio miServicio;
     String subUrl;
+    controlador_funciones miControladorFunciones;
+    controlador_silla miControladorSilla;
+    controlador_usuario miControladorUsuario;
+    
 
     public controlador_boleto(String server, String subUrl) {
         this.miServicio = new Servicio(server);
         this.subUrl = subUrl;
+        String urlServidor = "http://127.0.0.1:8080";
+        this.miControladorUsuario = new controlador_usuario( urlServidor, "/usuarios");
+        this.miControladorFunciones = new controlador_funciones( urlServidor, "/funciones");
+        this.miControladorSilla = new controlador_silla(urlServidor, "/sillas");
     }
 
     
@@ -80,6 +88,20 @@ public class controlador_boleto {
         return nuevoBoleto;
     }
     
+    public Boleto reArmar2(JSONObject objetoJson) {
+        Boleto nuevoBoleto=new Boleto();
+        nuevoBoleto.setId((String) objetoJson.get("_id"));
+        nuevoBoleto.setTipo((String) objetoJson.get("tipo"));
+        nuevoBoleto.setValor((double)objetoJson.get("valor"));
+        JSONObject silla = (JSONObject) objetoJson.get("silla");
+        nuevoBoleto.setMiSilla(this.miControladorSilla.reArmar(silla));
+        JSONObject funcion = (JSONObject) objetoJson.get("funcion");
+        nuevoBoleto.setMiFuncion(this.miControladorFunciones.reArmar(funcion));
+        JSONObject usuario = (JSONObject) objetoJson.get("usuario");
+        nuevoBoleto.setMiUsuario(this.miControladorUsuario.reArmar(usuario));
+        return nuevoBoleto;
+    }
+    
     public Silla setearSilla(JSONObject silla){
         Silla sillaN = new Silla();
         sillaN.setNumero((int) (long) silla.get("numero"));
@@ -102,7 +124,7 @@ public class controlador_boleto {
         Funcion funcionN = new Funcion();
         funcionN.setAno((int) (long) funcion.get("ano"));
         funcionN.setId((String)funcion.get("_id"));
-        funcionN.setHora((int) (long) funcion.get("nombre"));
+        funcionN.setHora((int) (long) funcion.get("hora"));
         funcionN.setDia((int) (long) funcion.get("dia"));
         funcionN.setMes((int) (long) funcion.get("mes"));
         return funcionN;
@@ -110,21 +132,20 @@ public class controlador_boleto {
     
     public LinkedList<Boleto> listar() {
         LinkedList<Boleto> respuesta = new LinkedList<>();
-        try {
             String endPoint = this.subUrl;
             String resultado = this.miServicio.GET(endPoint);
             JSONParser parser = new JSONParser();
-            JSONArray boletosJSON = (JSONArray) parser.parse(resultado);
-            for (Object actual : boletosJSON) {
-                JSONObject boletoJSON= (JSONObject) actual;
-                Boleto nuevoBoleto=new Boleto();
-                nuevoBoleto=reArmar(boletoJSON);
-                respuesta.add(nuevoBoleto);
-            }
-        } catch (Exception e) {
-            System.out.println("Error " + e);
-            respuesta = null;
-        }
+            try {
+                JSONArray boletosJSON = (JSONArray) parser.parse(resultado);
+                for (Object actual : boletosJSON) {
+                    JSONObject boletoJSON= (JSONObject) actual;
+                    Boleto nuevoBoleto=new Boleto();
+                    nuevoBoleto=reArmar2(boletoJSON);
+                    respuesta.add(nuevoBoleto);
+                }
+            } catch (Exception e){
+                System.out.println("Que pesar");
+            } 
         return respuesta;
     }
     
