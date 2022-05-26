@@ -6,6 +6,7 @@ package Vistas;
 
 import Controladores.controlador_boleto;
 import Modelos.Boleto;
+import Modelos.Pelicula;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
 
@@ -164,6 +165,11 @@ public class Informacion_boleto extends javax.swing.JInternalFrame {
 
         jButton4.setBackground(new java.awt.Color(255, 51, 51));
         jButton4.setText("Eliminar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Cancelar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -292,13 +298,17 @@ public class Informacion_boleto extends javax.swing.JInternalFrame {
         }
         return encontrado;
     }
-    
+
     
     private void btnBuscarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarUsuarioActionPerformed
         // TODO add your handling code here:
+        this.jTextField4.setEnabled(false);
+        this.jTextField5.setEnabled(false);
+        this.jTextField6.setEnabled(false);
+       
         this.jTextField2.setEnabled(true);
         this.jTextField3.setEnabled(true);
-        this.jTextField4.setEnabled(true);
+
         String nombre_usuario = this.jTextField4.getText();
         String fecha_funcion = this.jTextField5.getText();
         String silla = this.jTextField6.getText();
@@ -340,6 +350,17 @@ public class Informacion_boleto extends javax.swing.JInternalFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        String id = this.jTextField1.getText();
+        double valor = Double.parseDouble(this.jTextField2.getText());
+        String tipo = this.jTextField3.getText();
+        
+        Boleto BoletoActualizar = new Boleto(valor,tipo);
+        BoletoActualizar.setId(id);
+        
+        Boleto actualizado=this.miControlador_boleto.actualizar(BoletoActualizar);
+        
+        limpiarCampos();
+        JOptionPane.showMessageDialog(null,"La pelicula ha sido actualizada");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField4MouseClicked
@@ -356,6 +377,29 @@ public class Informacion_boleto extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         this.jTextField6.setText("");
     }//GEN-LAST:event_jTextField6MouseClicked
+    public void limpiarCampos(){
+        this.jTextField2.setEnabled(false);
+        this.jTextField3.setEnabled(false);
+        
+        this.jTextField4.setEnabled(true);
+        this.jTextField5.setEnabled(true);
+        this.jTextField6.setEnabled(true);
+
+        
+        this.jTextField1.setText("");
+        this.jTextField2.setText("");
+        this.jTextField3.setText("");
+        this.jTextField4.setText("");
+        this.jTextField5.setText("");
+        this.jTextField6.setText("");
+    }
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        String idBoleto=this.jTextField1.getText();
+        this.miControlador_boleto.eliminar(idBoleto);
+        JOptionPane.showMessageDialog(null, "Eliminación exitosa");
+        limpiarCampos();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -141,14 +141,11 @@ public class Crear_boleto extends javax.swing.JInternalFrame {
 
         jLabel6.setText("Seleccione función");
 
-        CBFuncion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         CBFuncion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CBFuncionActionPerformed(evt);
             }
         });
-
-        CBSillas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         txtCedula.setForeground(new java.awt.Color(204, 204, 204));
         txtCedula.setText("Cédula Usuario");
