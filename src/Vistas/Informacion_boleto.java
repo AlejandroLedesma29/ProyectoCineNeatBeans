@@ -305,7 +305,7 @@ public class Informacion_boleto extends javax.swing.JInternalFrame {
         this.jTextField2.setEnabled(true);
         this.jTextField3.setEnabled(true);
 
-        String nombre_usuario = this.jTextField4.getText();
+        String cedula = this.jTextField4.getText();
         String fecha_funcion = this.jTextField5.getText();
         String silla = this.jTextField6.getText();
         Boleto buscado = buscar_boleto(cedula,fecha_funcion, silla);      

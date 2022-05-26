@@ -144,7 +144,7 @@ public class controlador_boleto {
                     respuesta.add(nuevoBoleto);
                 }
             } catch (Exception e){
-                System.out.println("Que pesar");
+                //System.out.println(""+e);
             } 
         return respuesta;
     }
